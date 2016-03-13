@@ -14,28 +14,29 @@ package napakalaki;
 public class Prize {
     private int treasures;
 
-    private int level;
+    private int levels;
 
     public Prize(){
       treasures = 0;
-      level = 0;
+      levels = 0;
     }
 
     public Prize(int treasures, int level){
       this.treasures = treasures;
-      this.level = level;
-    }
-
-    public int getLevels(){
-      return level;
+      this.levels = level;
     }
 
     public int getTreasures(){
-      return treasures;
+      return this.treasures;
+    }    
+
+    public int getLevels(){
+      return this.levels;
     }
-    
+
     @Override
     public String toString(){
-        return "Tesoros : " + Integer.toString(treasures) + " Niveles : " +Integer.toString(level);
+        return "Tesoros : " + Integer.toString(this.treasures) + " Niveles : " +
+                Integer.toString(this.levels);
     }
 }

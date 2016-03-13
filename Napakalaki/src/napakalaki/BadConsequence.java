@@ -58,6 +58,14 @@ public class BadConsequence {
     public int getLevels(){
       return this.levels;
     }
+    
+    public int getNVisibleTreasures(){
+      return this.nVisibleTreasures;
+    }
+
+    public int getNHiddenTreasures(){
+      return this.nHiddenTreasures;
+    }
 
     ArrayList<TreasureKind> getSpecificVisibleTreasures(){
       return this.specificVisibleTreasures;
@@ -67,19 +75,20 @@ public class BadConsequence {
       return this.specificHiddenTreasures;
     }
 
-    public int getNVisibleTreasures(){
-      return this.nVisibleTreasures;
-    }
-
-    public int getNHiddenTreasures(){
-      return this.nHiddenTreasures;
-    }
-
     @Override
     public String toString(){
-        String ret = "Texto: " + this.text + " Niveles: " + this.levels;
-        if() 
-        " Tesoros Visibles: " + this.nVisibleTreasures + " Tesoros ocultos: "
-        + this.nHiddenTreasures ;
+        String ret = "Texto: " + this.text + " Niveles que pierdes: " + this.levels + " "; 
+        if(this.levels == DEAD && this.nVisibleTreasures == DEAD &&
+        this.nHiddenTreasures == DEAD)
+            ret = ret + " Estas muerto, no te preocupes sigues jugando.";    
+        else if(this.getNVisibleTreasures() == INV && this.getNHiddenTreasures()
+                == INV)
+            ret= ret+ "Lista de tesoros visibles es: " + this.specificVisibleTreasures 
+                    + " la de tesoros ocultos " + this.specificHiddenTreasures;
+        else
+            ret= ret + "Numero de tesoros visibles que pierdes es: " 
+                    + this.nVisibleTreasures + " número de tesoros ocultos que "
+                    + "pierdes " + this.nHiddenTreasures;
+        return ret;
     }
 }

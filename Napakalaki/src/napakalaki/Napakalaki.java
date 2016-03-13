@@ -30,7 +30,7 @@ public class Napakalaki {
 
       pr = new Prize(1,1);
       bc = new BadConsequence ("Embobados con el lindo primigenio te descartas de tu casco visible",
-      0, null, new ArrayList(Arrays.asList(TreasureKind.HELMETS)));
+      0, new ArrayList(Arrays.asList(TreasureKind.HELMETS)), null);
       monstruos.add (new Monster("Chibithulhu",2,bc,pr));
 
       pr = new Prize(1,1);
@@ -118,10 +118,11 @@ public class Napakalaki {
 
       ArrayList<Monster> looselev = new ArrayList();
       for (Monster m : monstruos){
-        if (m.getBadConsequence().getLevels() > 0 && m.getBadConsequence().getNHiddenTreasures() <= 0
-        && m.getBadConsequence().getNVisibleTreasures() <= 0 &&
-        m.getBadConsequence().getSpecificVisibleTreasures() == null &&
-        m.getBadConsequence().getSpecificHiddenTreasures() == null){
+        if (m.getBadConsequence().getLevels() > 0
+                && m.getBadConsequence().getNHiddenTreasures() <= 0
+                && m.getBadConsequence().getNVisibleTreasures() <= 0 
+                && m.getBadConsequence().getSpecificVisibleTreasures() == null 
+                && m.getBadConsequence().getSpecificHiddenTreasures() == null){
           looselev.add(m);
         }
       }

@@ -22,28 +22,28 @@ public class Monster {
         this.prize = prize;
     }
 
-    BadConsequence getBadConsequence(){
-        return bc;
-    }
- 
-    int getLevelsGained(){
-        return prize.getLevels();
-    }
-    
-    int getTreasuresGained(){
-        return prize.getTreasures();
-    }
-
-    Prize getPrize(){
-        return prize;
-    }
-
     String getName(){
-        return name;
+        return this.name;
     }
 
     int getCombatLevel(){
-        return combatLevel;
+        return this.combatLevel;
+    }
+    
+    BadConsequence getBadConsequence(){
+        return this.bc;
+    }
+    
+    int getTreasuresGained(){
+        return this.prize.getTreasures();
+    }
+    
+    int getLevelsGained(){
+        return this.prize.getLevels();
+    }
+    
+    Prize getPrize(){ //Aunque en la P2 no la pide
+        return this.prize;
     }
 
     @Override
