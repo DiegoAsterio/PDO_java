@@ -77,18 +77,22 @@ public class BadConsequence {
 
     @Override
     public String toString(){
-        String ret = "Texto: " + this.text + " Niveles que pierdes: " + this.levels + " "; 
+        String ret = "Texto: " + this.text ; 
         if(this.levels == DEAD && this.nVisibleTreasures == DEAD &&
         this.nHiddenTreasures == DEAD)
             ret = ret + " Estas muerto, no te preocupes sigues jugando.";    
-        else if(this.getNVisibleTreasures() == INV && this.getNHiddenTreasures()
-                == INV)
-            ret= ret+ "Lista de tesoros visibles es: " + this.specificVisibleTreasures 
-                    + " la de tesoros ocultos " + this.specificHiddenTreasures;
-        else
-            ret= ret + "Numero de tesoros visibles que pierdes es: " 
-                    + this.nVisibleTreasures + " número de tesoros ocultos que "
-                    + "pierdes " + this.nHiddenTreasures;
+        else 
+        {
+            ret = ret + " Niveles que pierdes: " + this.levels + " ";
+            if(this.getNVisibleTreasures() == INV && this.getNHiddenTreasures()
+                    == INV)
+                ret= ret+ "Lista de tesoros visibles es: " + this.specificVisibleTreasures 
+                        + " la de tesoros ocultos " + this.specificHiddenTreasures;
+            else
+                ret= ret + "Numero de tesoros visibles que pierdes es: " 
+                        + this.nVisibleTreasures + " número de tesoros ocultos que "
+                        + "pierdes " + this.nHiddenTreasures;
+        }
         return ret;
     }
 }
